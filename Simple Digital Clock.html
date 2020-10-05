@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Digital Clock</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            jam();
+        }
+
+        function jam() {
+            var a = document.getElementById('jam'),
+                d = new Date(),
+                h, m, s;
+            h = d.getHours();
+            m = Set(d.getMinutes());
+            s = Set(d.getSeconds());
+
+            a.innerHTML = h + ":" + m + ":" + s;
+
+            setTimeout('jam()', 1000);
+
+        }
+
+        function Set(a) {
+            a = a < 10 ? '0' + a : a;
+            return a;
+        }
+    </script>
+</head>
+
+<body style="font-size: 100px;
+font-family: sans-serif;
+position: center;
+color: rgb(95, 171, 243);
+padding-left: 75px;
+padding-top: 5px;
+background-color: black;
+border: 3px solid rgb(95, 171, 243);
+border-radius: 30px;
+margin: 400px;
+margin-top: 170px;
+position: relative;
+" id="jam">
+</body>
+
+</html>
